@@ -6,6 +6,7 @@
 ## Header Section
 
 **Top Navigation Bar:**
+
 - Home
 - About Us
 - Solutions
@@ -14,11 +15,12 @@
 - Contact Us
 
 **Hero Section:**
+
 - **Headline:** "Shaping the Future of Farming Through Technology"
 - **Subheadline:** "Custom Automation and Data Solutions to Transform Agriculture"
 - **Call to Action (CTA) Button:** "Learn More About Our Vision" / "Start Your Journey with Us"
 
-**Hero Image:** 
+**Hero Image:**
 An image of a modern agricultural landscape with technology elements, such as a drone or sensors, symbolizing innovation.
 
 ---
@@ -65,6 +67,7 @@ Eco Farm Technologies Inc. is a forward-thinking company based in Ontario, Canad
 At Eco Farm Technologies, innovation is the cornerstone of our work. Our research and development team is focused on exploring new technologies to tackle both current and future challenges in agriculture. From automation advancements to data-centric farming practices, we are committed to creating solutions that support a more productive and sustainable farming ecosystem.
 
 **Key Focus Areas:**
+
 - Exploring machine learning applications
 - Developing IoT integrations for enhanced field monitoring
 - Designing sustainable farming technologies
@@ -81,6 +84,7 @@ At Eco Farm Technologies, innovation is the cornerstone of our work. Our researc
 We aim to be a resource for farmers, sharing insights and information on the evolving landscape of agricultural technology. Our resources will cover topics from trends in automation to best practices for sustainable farming.
 
 **Types of Resources (upcoming):**
+
 - General industry articles
 - Educational resources
 - Guides on tech adoption in agriculture
@@ -97,20 +101,23 @@ We aim to be a resource for farmers, sharing insights and information on the evo
 Interested in how technology can work for your farm? We’d love to hear from you. Reach out to learn more about our services, or let us know how we can assist you with your farming technology needs.
 
 **Contact Form Fields:**
+
 - Name
 - Email
 - Phone
 - Message Box: "How can we help?"
 
 **Alternative Contact Methods:**
+
 - Phone: +1 (XXX) XXX-XXXX
-- Email: info@ecofarmtechnologies.com
+- Email: <info@ecofarmtechnologies.com>
 
 ---
 
 ## Footer Section
 
 **Quick Links:**
+
 - Home
 - Solutions
 - Research
@@ -122,4 +129,4 @@ Interested in how technology can work for your farm? We’d love to hear from yo
 **Copyright Statement:**
 © 2024 Eco Farm Technologies Inc. All rights reserved.
 
---- 
+---
