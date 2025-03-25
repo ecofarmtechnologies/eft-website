@@ -37,8 +37,13 @@
     .nav-bar {
       display: flex;
       align-items: center;
-      justify-content: space-between;
+      justify-content: space-between; /* So that .logo-title is on the left, menu/hamburger on the right */
       position: relative;
+    }
+
+    .logo-title {
+      display: flex;
+      align-items: center;
     }
 
     .logo img {
@@ -48,7 +53,7 @@
     .site-title {
       font-size: 24px;
       font-weight: 700;
-      margin-left: 10px;
+      margin-left: 10px; /* Keep title close to logo but slightly separated */
     }
 
     /* Menu Toggle (Hamburger) for Mobile */
@@ -80,13 +85,20 @@
     .main-screen {
       flex: 1;
       width: 100%;
+      display: flex;
+      flex-direction: column;
     }
 
-    /* Hero Background: everything below the header, with overlay content */
+    /* Hero Background: fill screen width, maintain at least full viewport height */
     .hero-background {
       position: relative;
       background: url("background-tractor.png") no-repeat center center / cover;
-      padding: 80px 20px 60px 20px; /* Enough padding to accommodate content */
+      padding: 80px 20px 60px;
+      min-height: 100vh; /* Ensures background fills at least the entire browser window height */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
     }
 
     /* Hero Text overlay */
@@ -97,17 +109,17 @@
       font-weight: 500;
       max-width: 600px;
       line-height: 1.4;
-      margin: 0 auto 40px auto;
+      margin-bottom: 40px;
     }
 
     /* Articles Section (on top of background) */
     .articles-section {
       max-width: 900px;
       width: 100%;
-      margin: 0 auto 40px auto;
       background: rgba(14, 8, 8, 0.67);
       padding: 20px;
       border-radius: 4px;
+      margin-bottom: 40px;
     }
 
     /* List + Button in one row on desktop */
@@ -115,8 +127,7 @@
       display: flex;
       justify-content: space-around;
       align-items: center;
-      text-align: center;
-      flex-wrap: nowrap; /* Keep them on one line in desktop */
+      flex-wrap: nowrap; /* Keep them on one line in desktop if possible */
       row-gap: 20px;
       column-gap: 20px;
     }
@@ -126,7 +137,8 @@
       font-weight: 400;
       font-size: 14px;
       width: 150px;
-      flex-shrink: 0; /* don't shrink category blocks */
+      flex-shrink: 0;
+      text-align: center;
     }
 
     /* "Read More" Button */
@@ -143,7 +155,7 @@
       align-items: center;
       justify-content: center;
       cursor: pointer;
-      flex-shrink: 0; /* keep it from shrinking */
+      flex-shrink: 0;
     }
 
     .read-more-btn img {
@@ -156,7 +168,6 @@
     .hero-section-placeholder {
       background: rgba(168, 32, 26, 0.7);
       width: 220px;
-      margin: 40px auto 0 auto;
       text-align: center;
       font-size: 16px;
       font-weight: 800;
@@ -171,7 +182,7 @@
       font-size: 13px;
       font-weight: 500;
       opacity: 0.7;
-      padding: 5px 20px; /* minimal vertical padding */
+      padding: 5px 20px;
       line-height: 1.4;
     }
 
@@ -197,13 +208,10 @@
         display: flex;
       }
 
-      .site-title {
-        margin: 0 auto;
-      }
-
       .hero-text {
         font-size: 24px;
         width: 80%;
+        margin-bottom: 40px;
       }
 
       /* Vertical stack in mobile */
@@ -215,23 +223,24 @@
 
       .articles-list .category,
       .read-more-btn {
-        width: auto; /* so they shrink nicely and center */
+        width: auto;
         margin: 10px 0;
       }
     }
   </style>
 </head>
 <body>
+
 <div class="page-container">
 
   <!-- Header (above ~149px) -->
   <header class="header">
     <div class="nav-bar">
-      <div class="logo">
-        <img src="logo.png" alt="Eco Farm Logo"/>
-      </div>
-      <div class="site-title">
-        ECO FARM Technologies
+      <div class="logo-title">
+        <div class="logo">
+          <img src="logo.png" alt="Eco Farm Logo"/>
+        </div>
+        <div class="site-title">ECO FARM Technologies</div>
       </div>
       <div class="menu-toggle" onclick="toggleMenu()">&#9776;</div>
       <nav class="nav-menu">
@@ -286,7 +295,6 @@
   <footer class="footer">
     © 2024 Eco Farm Technologies Inc. All rights reserved.
   </footer>
-
 </div>
 
 <script>
@@ -295,5 +303,6 @@
     navMenu.classList.toggle('active');
   }
 </script>
+
 </body>
 </html>
