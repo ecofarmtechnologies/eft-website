@@ -16,13 +16,16 @@
       font-family: sans-serif;
       background-color: #606C38;
       color: #fff;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
     }
 
     /* Page Container */
     .page-container {
       display: flex;
       flex-direction: column;
-      min-height: 100vh;
+      flex: 1;
     }
 
     /* Header */
@@ -83,8 +86,7 @@
     .hero-background {
       position: relative;
       background: url("background-tractor.png") no-repeat center center / cover;
-      /* Enough padding to accommodate text & articles on top of background */
-      padding: 80px 20px 60px 20px;
+      padding: 80px 20px 60px 20px; /* Enough padding to accommodate content */
     }
 
     /* Hero Text overlay */
@@ -95,10 +97,10 @@
       font-weight: 500;
       max-width: 600px;
       line-height: 1.4;
-      margin: 0 auto 40px auto; /* center with space below for the next block */
+      margin: 0 auto 40px auto;
     }
 
-    /* Articles Section (also on top of background) */
+    /* Articles Section (on top of background) */
     .articles-section {
       max-width: 900px;
       width: 100%;
@@ -108,12 +110,15 @@
       border-radius: 4px;
     }
 
+    /* List + Button in one row on desktop */
     .articles-list {
       display: flex;
       justify-content: space-around;
+      align-items: center;
       text-align: center;
-      flex-wrap: wrap;
+      flex-wrap: nowrap; /* Keep them on one line in desktop */
       row-gap: 20px;
+      column-gap: 20px;
     }
 
     .articles-list .category {
@@ -121,6 +126,7 @@
       font-weight: 400;
       font-size: 14px;
       width: 150px;
+      flex-shrink: 0; /* don't shrink category blocks */
     }
 
     /* "Read More" Button */
@@ -136,8 +142,8 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      margin: 20px auto 0 auto;
       cursor: pointer;
+      flex-shrink: 0; /* keep it from shrinking */
     }
 
     .read-more-btn img {
@@ -146,7 +152,7 @@
       margin-right: 8px;
     }
 
-    /* Placeholder block as in original design */
+    /* Placeholder block, as per original design */
     .hero-section-placeholder {
       background: rgba(168, 32, 26, 0.7);
       width: 220px;
@@ -158,14 +164,15 @@
       padding: 8px 0;
     }
 
-    /* Footer */
+    /* Footer (minimize height) */
     .footer {
       text-align: right;
       font-family: "Lora", serif;
       font-size: 13px;
       font-weight: 500;
       opacity: 0.7;
-      padding: 10px 20px;
+      padding: 5px 20px; /* minimal vertical padding */
+      line-height: 1.4;
     }
 
     /* MEDIA QUERIES FOR RESPONSIVE DESIGN */
@@ -199,8 +206,17 @@
         width: 80%;
       }
 
+      /* Vertical stack in mobile */
       .articles-list {
         flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .articles-list .category,
+      .read-more-btn {
+        width: auto; /* so they shrink nicely and center */
+        margin: 10px 0;
       }
     }
   </style>
@@ -241,6 +257,7 @@
 
       <!-- Articles/Resources Section -->
       <div class="articles-section">
+        <!-- Categories + "read more" button in one row (desktop) or stacked (mobile) -->
         <div class="articles-list">
           <div class="category">
             General industry<br/>articles
@@ -251,10 +268,10 @@
           <div class="category">
             Guides on tech adoption<br/>in agriculture
           </div>
-        </div>
-        <div class="read-more-btn">
-          <img src="readmore.png" alt="Read More Icon" />
-          read more
+          <div class="read-more-btn">
+            <img src="readmore.png" alt="Read More Icon" />
+            read more
+          </div>
         </div>
       </div>
 
@@ -265,10 +282,11 @@
     </div>
   </main>
 
-  <!-- Footer -->
+  <!-- Footer (minimized height) -->
   <footer class="footer">
     © 2024 Eco Farm Technologies Inc. All rights reserved.
   </footer>
+
 </div>
 
 <script>
